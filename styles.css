@@ -35,6 +35,13 @@ main {
   align-items: center;
 }
 
+.location {
+  font-size: 28px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
 .text {
   text-wrap: balance;
   line-height: 1.4;

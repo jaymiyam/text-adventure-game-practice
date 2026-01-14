@@ -1,4 +1,5 @@
 const textEl = document.querySelector('#text');
+const locationEl = document.querySelector('#location');
 const buttonsWrapperEl = document.querySelector('#buttons-wrapper');
 
 let gameStates = {};
@@ -26,6 +27,7 @@ function startGame() {
 function showNode(id) {
   const targetNode = nodes.find((node) => node.id === id);
   textEl.innerText = targetNode.text;
+  locationEl.innerText = targetNode.location;
 
   // clear option buttons
   while (buttonsWrapperEl.firstChild) {
@@ -65,6 +67,7 @@ function selectOption(option) {
 const nodes = [
   {
     id: 1,
+    location: 'The Forest',
     text: 'You awaken on damp forest ground, your memories gone. Nearby lie a worn backpack and a sword paired with a battered shield.',
     options: [
       {
@@ -81,6 +84,7 @@ const nodes = [
   },
   {
     id: 2,
+    location: 'The Forest',
     text: 'You follow a narrow trail until a lone merchant appears, her cart creaking softly in the wind.',
     options: [
       {
@@ -104,6 +108,7 @@ const nodes = [
   },
   {
     id: 3,
+    location: 'The Church',
     text: 'An old church stands ahead. Inside, a frail priest offers warmth—and a riddle—for a divine reward: “1=3, 2=3, 3=5, 4=4, 5=4. What is 6?”',
     options: [
       { text: 'Answer: 1', next: 4 },
@@ -114,6 +119,7 @@ const nodes = [
   },
   {
     id: 4,
+    location: 'The Church',
     text: 'The priest smiles gently. “Wisdom comes with time,” he says, turning away.',
     options: [
       {
@@ -124,6 +130,7 @@ const nodes = [
   },
   {
     id: 5,
+    location: 'The Church',
     text: 'The priest’s eyes brighten. He presses a golden charm into your palm. “May it guide you,” he whispers.',
     options: [
       {
@@ -135,6 +142,7 @@ const nodes = [
   },
   {
     id: 6,
+    location: 'The Village',
     text: 'Villagers gather around you, fear in their voices. A cursed castle looms nearby, and they beg for your help.',
     options: [
       {
@@ -149,6 +157,7 @@ const nodes = [
   },
   {
     id: 7,
+    location: 'The Village',
     text: 'On the road, the merchant finds you again. “A gift,” she says. “You’ll need it.”',
     options: [
       {
@@ -165,11 +174,13 @@ const nodes = [
   },
   {
     id: 8,
+    location: 'The Village',
     text: 'That night, a monstrous roar echoes from the castle and reached the village. By dawn, the village is silent—and so are you.',
     options: [{ text: 'Restart your fate', next: -1 }],
   },
   {
     id: 9,
+    location: 'The Village',
     text: 'A wandering alchemist stops you. “Any substances worth refining?” he asks with a grin.',
     options: [
       {
@@ -187,6 +198,7 @@ const nodes = [
   },
   {
     id: 10,
+    location: 'The Gate',
     text: 'You reach the castle gates, sealed by magic. Strange letters glow on a lock: “ENTQ. One step forward reveals the truth.”',
     options: [
       { text: 'Press the number 9', next: 11 },
@@ -197,6 +209,7 @@ const nodes = [
   },
   {
     id: 21,
+    location: 'The Gate',
     text: 'The lock shatters with a flash of light, you enter and venture forth. Deep inside the castle, a massive shadow stirs—it has found you.',
     options: [
       { text: 'Turn and flee', next: 14 },
@@ -228,6 +241,7 @@ const nodes = [
   },
   {
     id: 11,
+    location: 'The Gate',
     text: 'The glow fades. The gate stands firm. You’ll need another way in.',
     options: [
       {
@@ -238,11 +252,13 @@ const nodes = [
   },
   {
     id: 12,
+    location: 'The Castle',
     text: 'You fall into thorns below. Wounded and helpless, darkness soon follows.',
     options: [{ text: 'Restart your fate', next: -1 }],
   },
   {
     id: 13,
+    location: 'The Castle',
     text: 'Pain surges as you land, but you manage to heal yourself. Deep within the castle, a monstrous guardian awaits.',
     options: [
       { text: 'Try to escape', next: 14 },
@@ -274,21 +290,25 @@ const nodes = [
   },
   {
     id: 14,
+    location: 'The Castle',
     text: 'You turn to run, but the monster is faster. Your journey ends here.',
     options: [{ text: 'Restart your fate', next: -1 }],
   },
   {
     id: 15,
+    location: 'The Castle',
     text: 'The bomb erupts. The beast collapses. You stand victorious—"The Alchemist" by deed.',
     options: [{ text: 'Restart your fate', next: -1 }],
   },
   {
     id: 16,
+    location: 'The Castle',
     text: 'The charm glows, then fades. The monster roars—and strikes you down.',
     options: [{ text: 'Restart your fate', next: -1 }],
   },
   {
     id: 17,
+    location: 'The Castle',
     text: 'Steel clashes with claw. You are wounded, your shield shattered.',
     options: [
       {
@@ -305,11 +325,13 @@ const nodes = [
   },
   {
     id: 18,
+    location: 'The Castle',
     text: 'With a final strike, the monster falls. You emerge as a "True Warrior".',
     options: [{ text: 'Restart your fate', next: -1 }],
   },
   {
     id: 19,
+    location: 'The Castle',
     text: 'The potion takes effect. The monster sways, barely conscious.',
     options: [
       {
@@ -334,6 +356,7 @@ const nodes = [
   },
   {
     id: 20,
+    location: 'The Castle',
     text: 'Light pours from the charm. The monster kneels before you, tamed at last. You are remembered as "The Tamer".',
     options: [{ text: 'Restart your fate', next: -1 }],
   },
