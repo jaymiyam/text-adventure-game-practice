@@ -69,6 +69,13 @@ main {
   font-size: 16px;
 }
 
-.option-btn:hover {
+.option-btn:active {
   background: #3e236e;
+}
+
+/* workaround mobile device sticky hover state issue */
+@media (hover: hover) {
+  .option-btn:hover {
+    background: #3e236e;
+  }
 }
